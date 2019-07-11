@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : kmplot
-Version  : 19.04.2
-Release  : 8
-URL      : https://download.kde.org/stable/applications/19.04.2/src/kmplot-19.04.2.tar.xz
-Source0  : https://download.kde.org/stable/applications/19.04.2/src/kmplot-19.04.2.tar.xz
-Source99 : https://download.kde.org/stable/applications/19.04.2/src/kmplot-19.04.2.tar.xz.sig
+Version  : 19.04.3
+Release  : 9
+URL      : https://download.kde.org/stable/applications/19.04.3/src/kmplot-19.04.3.tar.xz
+Source0  : https://download.kde.org/stable/applications/19.04.3/src/kmplot-19.04.3.tar.xz
+Source99 : https://download.kde.org/stable/applications/19.04.3/src/kmplot-19.04.3.tar.xz.sig
 Summary  : Mathematical Function Plotter
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -88,16 +88,17 @@ man components for the kmplot package.
 
 
 %prep
-%setup -q -n kmplot-19.04.2
+%setup -q -n kmplot-19.04.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1559895729
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562875943
 mkdir -p clr-build
 pushd clr-build
+export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -106,11 +107,11 @@ export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags}
+make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1559895729
+export SOURCE_DATE_EPOCH=1562875943
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kmplot
 cp COPYING %{buildroot}/usr/share/package-licenses/kmplot/COPYING
@@ -189,17 +190,11 @@ popd
 /usr/share/doc/HTML/es/kmplot/credits.docbook
 /usr/share/doc/HTML/es/kmplot/dcop.docbook
 /usr/share/doc/HTML/es/kmplot/developer.docbook
-/usr/share/doc/HTML/es/kmplot/edu-logo.png
 /usr/share/doc/HTML/es/kmplot/firststeps.docbook
 /usr/share/doc/HTML/es/kmplot/index.cache.bz2
 /usr/share/doc/HTML/es/kmplot/index.docbook
 /usr/share/doc/HTML/es/kmplot/install.docbook
 /usr/share/doc/HTML/es/kmplot/introduction.docbook
-/usr/share/doc/HTML/es/kmplot/kfkt.png
-/usr/share/doc/HTML/es/kmplot/ksys1.png
-/usr/share/doc/HTML/es/kmplot/ksys2.png
-/usr/share/doc/HTML/es/kmplot/ksys3.png
-/usr/share/doc/HTML/es/kmplot/main.png
 /usr/share/doc/HTML/es/kmplot/reference.docbook
 /usr/share/doc/HTML/es/kmplot/threeplots.png
 /usr/share/doc/HTML/es/kmplot/using.docbook
