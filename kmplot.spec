@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : kmplot
-Version  : 20.04.2
-Release  : 21
-URL      : https://download.kde.org/stable/release-service/20.04.2/src/kmplot-20.04.2.tar.xz
-Source0  : https://download.kde.org/stable/release-service/20.04.2/src/kmplot-20.04.2.tar.xz
-Source1  : https://download.kde.org/stable/release-service/20.04.2/src/kmplot-20.04.2.tar.xz.sig
+Version  : 20.08.0
+Release  : 22
+URL      : https://download.kde.org/stable/release-service/20.08.0/src/kmplot-20.08.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/20.08.0/src/kmplot-20.08.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/20.08.0/src/kmplot-20.08.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -24,7 +24,7 @@ BuildRequires : buildreq-kde
 BuildRequires : qtbase-dev mesa-dev
 
 %description
-No detailed description available
+**KmPlot** is a program to plot graphs of functions, their integrals or derivatives. The graphs can be colorized and the view is highly configurable, is scalable, and can be zoomed. The program features a powerful mathematical parser, different plot types (*cartesian*, *parametric*, *polar*, *implicit*, *differential*), and provides simple mathematical tools like for finding *maximum*/*minimum* of a function and plotting *derivatives* and *integral*. Parametrized functions can be visualized by adjusting the variable parameter via a slider. Plots can be exported as bitmap format pictures (*BMP*, *PNG*) or scalable vector graphics (*SVG*) and can be printed.
 
 %package bin
 Summary: bin components for the kmplot package.
@@ -88,15 +88,15 @@ man components for the kmplot package.
 
 
 %prep
-%setup -q -n kmplot-20.04.2
-cd %{_builddir}/kmplot-20.04.2
+%setup -q -n kmplot-20.08.0
+cd %{_builddir}/kmplot-20.08.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1591897565
+export SOURCE_DATE_EPOCH=1597788995
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -108,15 +108,15 @@ export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags}  VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1591897565
+export SOURCE_DATE_EPOCH=1597788995
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kmplot
-cp %{_builddir}/kmplot-20.04.2/COPYING %{buildroot}/usr/share/package-licenses/kmplot/133efad5329acf364135c569ac01ec084c3d4647
-cp %{_builddir}/kmplot-20.04.2/COPYING.DOC %{buildroot}/usr/share/package-licenses/kmplot/1bd373e4851a93027ba70064bd7dbdc6827147e1
+cp %{_builddir}/kmplot-20.08.0/COPYING %{buildroot}/usr/share/package-licenses/kmplot/133efad5329acf364135c569ac01ec084c3d4647
+cp %{_builddir}/kmplot-20.08.0/COPYING.DOC %{buildroot}/usr/share/package-licenses/kmplot/1bd373e4851a93027ba70064bd7dbdc6827147e1
 pushd clr-build
 %make_install
 popd
@@ -152,18 +152,8 @@ popd
 
 %files doc
 %defattr(0644,root,root,0755)
-/usr/share/doc/HTML/ca/kmplot/commands.docbook
-/usr/share/doc/HTML/ca/kmplot/configuration.docbook
-/usr/share/doc/HTML/ca/kmplot/credits.docbook
-/usr/share/doc/HTML/ca/kmplot/dcop.docbook
-/usr/share/doc/HTML/ca/kmplot/developer.docbook
-/usr/share/doc/HTML/ca/kmplot/firststeps.docbook
 /usr/share/doc/HTML/ca/kmplot/index.cache.bz2
 /usr/share/doc/HTML/ca/kmplot/index.docbook
-/usr/share/doc/HTML/ca/kmplot/install.docbook
-/usr/share/doc/HTML/ca/kmplot/introduction.docbook
-/usr/share/doc/HTML/ca/kmplot/reference.docbook
-/usr/share/doc/HTML/ca/kmplot/using.docbook
 /usr/share/doc/HTML/de/kmplot/index.cache.bz2
 /usr/share/doc/HTML/de/kmplot/index.docbook
 /usr/share/doc/HTML/de/kmplot/main.png
