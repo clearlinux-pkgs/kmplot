@@ -6,11 +6,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : kmplot
-Version  : 23.04.3
-Release  : 55
-URL      : https://download.kde.org/stable/release-service/23.04.3/src/kmplot-23.04.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/23.04.3/src/kmplot-23.04.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/23.04.3/src/kmplot-23.04.3.tar.xz.sig
+Version  : 23.08.0
+Release  : 56
+URL      : https://download.kde.org/stable/release-service/23.08.0/src/kmplot-23.08.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/23.08.0/src/kmplot-23.08.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/23.08.0/src/kmplot-23.08.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -91,15 +91,15 @@ man components for the kmplot package.
 
 
 %prep
-%setup -q -n kmplot-23.04.3
-cd %{_builddir}/kmplot-23.04.3
+%setup -q -n kmplot-23.08.0
+cd %{_builddir}/kmplot-23.08.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688850554
+export SOURCE_DATE_EPOCH=1693014567
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -132,7 +132,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1688850554
+export SOURCE_DATE_EPOCH=1693014567
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kmplot
 cp %{_builddir}/kmplot-%{version}/LICENSES/GFDL-1.2-or-later.txt %{buildroot}/usr/share/package-licenses/kmplot/ee03d68f6be20b170e5ea5d114d6acafb3f2d1dc || :
@@ -204,7 +204,6 @@ popd
 /usr/share/doc/HTML/es/kmplot/commands.docbook
 /usr/share/doc/HTML/es/kmplot/configuration.docbook
 /usr/share/doc/HTML/es/kmplot/credits.docbook
-/usr/share/doc/HTML/es/kmplot/dcop.docbook
 /usr/share/doc/HTML/es/kmplot/developer.docbook
 /usr/share/doc/HTML/es/kmplot/firststeps.docbook
 /usr/share/doc/HTML/es/kmplot/index.cache.bz2
@@ -262,7 +261,6 @@ popd
 /usr/share/doc/HTML/it/kmplot/commands.docbook
 /usr/share/doc/HTML/it/kmplot/configuration.docbook
 /usr/share/doc/HTML/it/kmplot/credits.docbook
-/usr/share/doc/HTML/it/kmplot/dcop.docbook
 /usr/share/doc/HTML/it/kmplot/developer.docbook
 /usr/share/doc/HTML/it/kmplot/firststeps.docbook
 /usr/share/doc/HTML/it/kmplot/index.cache.bz2
@@ -274,7 +272,6 @@ popd
 /usr/share/doc/HTML/nl/kmplot/commands.docbook
 /usr/share/doc/HTML/nl/kmplot/configuration.docbook
 /usr/share/doc/HTML/nl/kmplot/credits.docbook
-/usr/share/doc/HTML/nl/kmplot/dcop.docbook
 /usr/share/doc/HTML/nl/kmplot/developer.docbook
 /usr/share/doc/HTML/nl/kmplot/edu-logo.png
 /usr/share/doc/HTML/nl/kmplot/firststeps.docbook
@@ -318,7 +315,6 @@ popd
 /usr/share/doc/HTML/pt/kmplot/commands.docbook
 /usr/share/doc/HTML/pt/kmplot/configuration.docbook
 /usr/share/doc/HTML/pt/kmplot/credits.docbook
-/usr/share/doc/HTML/pt/kmplot/dcop.docbook
 /usr/share/doc/HTML/pt/kmplot/developer.docbook
 /usr/share/doc/HTML/pt/kmplot/firststeps.docbook
 /usr/share/doc/HTML/pt/kmplot/index.cache.bz2
@@ -356,7 +352,6 @@ popd
 /usr/share/doc/HTML/ru/kmplot/commands.docbook
 /usr/share/doc/HTML/ru/kmplot/configuration.docbook
 /usr/share/doc/HTML/ru/kmplot/credits.docbook
-/usr/share/doc/HTML/ru/kmplot/dcop.docbook
 /usr/share/doc/HTML/ru/kmplot/developer.docbook
 /usr/share/doc/HTML/ru/kmplot/firststeps.docbook
 /usr/share/doc/HTML/ru/kmplot/index.cache.bz2
@@ -368,7 +363,6 @@ popd
 /usr/share/doc/HTML/sv/kmplot/commands.docbook
 /usr/share/doc/HTML/sv/kmplot/configuration.docbook
 /usr/share/doc/HTML/sv/kmplot/credits.docbook
-/usr/share/doc/HTML/sv/kmplot/dcop.docbook
 /usr/share/doc/HTML/sv/kmplot/developer.docbook
 /usr/share/doc/HTML/sv/kmplot/firststeps.docbook
 /usr/share/doc/HTML/sv/kmplot/index.cache.bz2
